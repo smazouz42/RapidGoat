@@ -7,4 +7,4 @@ echo "body { background: gray; padding: 20px; }" >> styles.8f1d28c5983cf8f0.css
 
 gzip styles.8f1d28c5983cf8f0.css
 
-rm styles.8f1d28c5983cf8f0.css
+rm -f styles.8f1d28c5983cf8f0.css
