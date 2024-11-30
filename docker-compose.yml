@@ -14,19 +14,16 @@ services:
     environment:
       HASURA_GRAPHQL_METADATA_DATABASE_URL: ${HASURA_GRAPHQL_METADATA_DATABASE_URL}
       PG_DATABASE_URL: ${PG_DATABASE_URL}
-      HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET}
+      # HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET}
       HASURA_GRAPHQL_ENABLE_CONSOLE: ${HASURA_GRAPHQL_ENABLE_CONSOLE}
       HASURA_GRAPHQL_DEV_MODE: ${HASURA_GRAPHQL_DEV_MODE}
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: ${HASURA_GRAPHQL_ENABLED_LOG_TYPES}
-      HASURA_GRAPHQL_CONSOLE_ASSETS_DIR: ${HASURA_GRAPHQL_CONSOLE_ASSETS_DIR}
+      # HASURA_GRAPHQL_CONSOLE_ASSETS_DIR: ${HASURA_GRAPHQL_CONSOLE_ASSETS_DIR}
       HASURA_GRAPHQL_METADATA_DEFAULTS: ${HASURA_GRAPHQL_METADATA_DEFAULTS}
     depends_on:
       data-connector-agent:
         condition: service_healthy
-    volumes:
-      - ./white-logo.svg:/srv/console-assets/versioned/white-logo.svg
-      - ./init-graphql.sh:/srv/console-assets/versioned/init-graphql.sh
-  
+
   data-connector-agent:
     image: hasura/graphql-data-connector:v2.42.0
     restart: always
